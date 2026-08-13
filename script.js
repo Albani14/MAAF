@@ -632,28 +632,13 @@ function createPhotoHeart() {
 
 
             /*
-                Skala posisi
+                Skala posisi berbasis persentase (%) agar responsive
             */
+            const pctX = 50 + (point.x / 16) * 38; // Jangkauan dari ~12% sampai ~88%
+            const pctY = 45 + (point.y / 17) * 38; // Jangkauan dari ~7% sampai ~83%
 
-            const scale = 12;
-
-
-            const x =
-                300 +
-                point.x * scale;
-
-
-            const y =
-                260 +
-                point.y * scale;
-
-
-            img.style.left =
-                `${x}px`;
-
-
-            img.style.top =
-                `${y}px`;
+            img.style.left = `${pctX}%`;
+            img.style.top = `${pctY}%`;
 
 
             img.style.animationDelay =
