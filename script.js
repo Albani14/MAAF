@@ -385,8 +385,8 @@ const photos = [
     ],
 
     [
-        "assets/gambar_1 (7).jpeg",
-        "assets/gambar_1 (8).jpeg"
+        "gambar_1 (7).jpeg",
+        "gambar_1 (8).jpeg"
     ]
 
 ];
