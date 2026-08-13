@@ -1,0 +1,764 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #050507;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================
+   MATRIX CANVAS
+========================================= */
+
+#matrixCanvas {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    background: #050507;
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+#stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease;
+
+    background:
+
+        radial-gradient(circle,
+            rgba(255, 255, 255, .9) 1px,
+            transparent 1px);
+
+    background-size: 55px 55px;
+
+    animation:
+        starMove 15s linear infinite;
+}
+
+
+@keyframes starMove {
+
+    from {
+        background-position:
+            0 0;
+    }
+
+    to {
+        background-position:
+            0 300px;
+    }
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+#intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    pointer-events: none;
+}
+
+
+#introText {
+
+    color: #ff3d9b;
+
+    font-size:
+        clamp(80px, 15vw, 180px);
+
+    font-weight: 900;
+
+    letter-spacing: 10px;
+
+    text-shadow:
+
+        0 0 5px #ff3d9b,
+
+        0 0 15px #ff3d9b,
+
+        0 0 35px #ff3d9b,
+
+        0 0 70px #ff1493;
+
+    opacity: 0;
+
+    transform: scale(.4);
+
+    transition:
+
+        opacity .6s ease,
+
+        transform .6s ease;
+}
+
+
+/* =========================================
+   PARTICLE HEART
+========================================= */
+
+#particleHeart {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 11;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 2s ease;
+}
+
+
+.particle-heart {
+
+    width: 180px;
+
+    height: 180px;
+
+    position: relative;
+
+    transform:
+        rotate(-45deg);
+
+    background:
+
+        radial-gradient(circle,
+            #ff4da6 1px,
+            transparent 2px);
+
+    background-size:
+        7px 7px;
+
+    filter:
+
+        drop-shadow(0 0 12px #ff3d9b) drop-shadow(0 0 30px #ff1493);
+
+    animation:
+        heartPulse 1.5s infinite;
+}
+
+
+.particle-heart::before,
+.particle-heart::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(circle,
+            #ff4da6 1px,
+            transparent 2px);
+
+    background-size:
+        7px 7px;
+}
+
+
+.particle-heart::before {
+
+    top: -90px;
+
+    left: 0;
+}
+
+
+.particle-heart::after {
+
+    left: 90px;
+
+    top: 0;
+}
+
+
+@keyframes heartPulse {
+
+    0% {
+        transform:
+            rotate(-45deg) scale(.9);
+    }
+
+    50% {
+        transform:
+            rotate(-45deg) scale(1.05);
+    }
+
+    100% {
+        transform:
+            rotate(-45deg) scale(.9);
+    }
+
+}
+
+
+/* =========================================
+   LOVE CARD
+========================================= */
+
+#loveCard {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 15;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    transform:
+        scale(.5);
+
+    pointer-events: none;
+
+    transition:
+
+        opacity 1.5s ease,
+
+        transform 1.5s ease;
+}
+
+
+.mini-card {
+
+    position: relative;
+
+    width: 200px;
+
+    height: 250px;
+
+    background:
+
+        linear-gradient(145deg,
+            #fff7e8,
+            #f8e8c8);
+
+    border-radius: 5px;
+
+    box-shadow:
+
+        0 0 40px rgba(255, 170, 170, .5);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+
+.hands {
+
+    font-size: 90px;
+
+    filter:
+        sepia(.2);
+
+    transform:
+        translateY(20px);
+}
+
+
+.mini-heart {
+
+    position: absolute;
+
+    top: 105px;
+
+    font-size: 35px;
+
+    animation:
+        miniHeart 1.2s infinite;
+}
+
+
+@keyframes miniHeart {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.2);
+    }
+
+}
+
+
+/* =========================================
+   MEMORY SECTION
+========================================= */
+
+#memorySection {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 10vh;
+
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    pointer-events: none;
+
+    transition:
+
+        opacity 1.5s ease,
+
+        transform 1.5s ease;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message-box {
+
+    position: relative;
+
+    width:
+        min(85vw, 700px);
+
+    min-height: 120px;
+
+    padding:
+
+        35px 45px;
+
+    background:
+
+        linear-gradient(135deg,
+            #fff8eb,
+            #f9ead1);
+
+    border-radius: 18px;
+
+    box-shadow:
+
+        0 0 25px rgba(255, 190, 170, .25);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.message-box p {
+
+    color: #9b756b;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    font-size:
+        clamp(14px, 2vw, 21px);
+
+    line-height: 1.8;
+}
+
+
+.message-heart {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 12px;
+
+    font-size: 22px;
+
+    animation:
+        floatingHeart 2s infinite;
+}
+
+
+@keyframes floatingHeart {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+
+/* =========================================
+   PHOTO FRAME
+========================================= */
+
+.photo-frame {
+
+    margin-top: 45px;
+
+    width:
+        min(85vw, 700px);
+
+    height:
+        min(50vh, 380px);
+
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    border:
+        2px solid rgba(255, 255, 255, .8);
+
+    box-shadow:
+
+        0 0 25px rgba(255, 180, 200, .25);
+
+    background: #111;
+}
+
+
+.photo-frame img {
+
+    width: 50%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1.5s ease,
+
+        opacity 1s ease;
+}
+
+
+#photoLeft {
+
+    border-right:
+        1px solid white;
+}
+
+
+/* =========================================
+   3D FLIP
+========================================= */
+
+.flip-left {
+
+    transform:
+        perspective(800px) rotateY(-90deg);
+
+    opacity: 0;
+}
+
+
+.flip-right {
+
+    transform:
+        perspective(800px) rotateY(90deg);
+
+    opacity: 0;
+}
+
+
+/* =========================================
+   FINAL SECTION
+========================================= */
+
+#finalSection {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 30;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    opacity: 0;
+
+    transform:
+        scale(.5);
+
+    pointer-events: none;
+
+    transition:
+
+        opacity 2s ease,
+
+        transform 2s ease;
+}
+
+
+/* =========================================
+   PHOTO HEART
+========================================= */
+
+#photoHeart {
+
+    position: relative;
+
+    width:
+        min(80vw, 600px);
+
+    height:
+        min(70vh, 600px);
+}
+
+
+.heart-photo {
+
+    position: absolute;
+
+    width: 75px;
+
+    height: 90px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border:
+
+        3px solid #ffd5dc;
+
+    box-shadow:
+
+        0 0 12px rgba(255, 150, 180, .7);
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0;
+
+    animation:
+        photoAppear .8s forwards;
+
+    transition:
+        transform .5s ease;
+}
+
+
+.heart-photo:hover {
+
+    transform:
+        translate(-50%, -50%) scale(1.3) rotate(0deg);
+
+    z-index: 100;
+}
+
+
+@keyframes photoAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%) scale(0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%) scale(1);
+
+    }
+
+}
+
+
+.final-text {
+
+    margin-top: -20px;
+
+    color: #ff9fbc;
+
+    font-size:
+        clamp(18px, 4vw, 30px);
+
+    letter-spacing: 6px;
+
+    text-shadow:
+
+        0 0 10px #ff4d8d,
+
+        0 0 25px #ff4d8d;
+
+    animation:
+        finalPulse 2s infinite;
+}
+
+
+@keyframes finalPulse {
+
+    0%,
+    100% {
+        opacity: .7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .message-box {
+
+        min-height: 100px;
+
+        padding:
+            25px;
+    }
+
+
+    .photo-frame {
+
+        height: 300px;
+
+        margin-top: 30px;
+    }
+
+
+    .heart-photo {
+
+        width: 55px;
+
+        height: 68px;
+
+        border-width: 2px;
+
+    }
+
+
+    .mini-card {
+
+        width: 170px;
+
+        height: 220px;
+    }
+
+
+    .hands {
+
+        font-size: 75px;
+    }
+
+}
