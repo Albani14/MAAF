@@ -370,18 +370,18 @@ function showMemory() {
 const photos = [
 
     [
-        "assets/gambar_1 (1).jpeg",
-        "assets/gambar_1 (2).jpeg"
+        "gambar_1 (1).jpeg",
+        "gambar_1 (2).jpeg"
     ],
 
     [
-        "assets/gambar_1 (3).jpeg",
-        "assets/gambar_1 (4).jpeg"
+        "gambar_1 (3).jpeg",
+        "gambar_1 (4).jpeg"
     ],
 
     [
-        "assets/gambar_1 (5).jpeg",
-        "assets/gambar_1 (6).jpeg"
+        "gambar_1 (5).jpeg",
+        "gambar_1 (6).jpeg"
     ],
 
     [
@@ -552,14 +552,14 @@ function createPhotoHeart() {
 
     const imageList = [
 
-        "assets/gambar_1 (1).jpeg",
-        "assets/gambar_1 (2).jpeg",
-        "assets/gambar_1 (3).jpeg",
-        "assets/gambar_1 (4).jpeg",
-        "assets/gambar_1 (5).jpeg",
-        "assets/gambar_1 (6).jpeg",
-        "assets/gambar_1 (7).jpeg",
-        "assets/gambar_1 (8).jpeg"
+        "gambar_1 (1).jpeg",
+        "gambar_1 (2).jpeg",
+        "gambar_1 (3).jpeg",
+        "gambar_1 (4).jpeg",
+        "gambar_1 (5).jpeg",
+        "gambar_1 (6).jpeg",
+        "gambar_1 (7).jpeg",
+        "gambar_1 (8).jpeg"
 
     ];
 
