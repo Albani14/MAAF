@@ -383,7 +383,11 @@ body {
 
     align-items: center;
 
-    padding-top: 10vh;
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 20px;
 
     opacity: 0;
 
@@ -493,13 +497,11 @@ body {
 
 .photo-frame {
 
-    margin-top: 45px;
-
     width:
         min(85vw, 700px);
 
     height:
-        min(50vh, 380px);
+        min(45vh, 380px);
 
     display: flex;
 
@@ -731,9 +733,8 @@ body {
 
     .photo-frame {
 
-        height: 300px;
+        height: min(40vh, 280px);
 
-        margin-top: 30px;
     }
 
 
